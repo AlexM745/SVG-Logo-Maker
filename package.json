@@ -1,0 +1,35 @@
+{
+  "name": "svg-logo-maker",
+  "version": "1.0.0",
+  "description": "this application uses user input to create a logo and save it as an svg file by using prompts asking the user to choose a color, shape and text for the logo.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AlexM745/SVG-Logo-Maker.git"
+  },
+  "keywords": [
+    "Node.js",
+    "NPM",
+    "Inquirer",
+    "Jest"
+  ],
+  "author": "Alexis Merino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexM745/SVG-Logo-Maker/issues"
+  },
+  "homepage": "https://github.com/AlexM745/SVG-Logo-Maker#readme",
+  "dependencies": {
+    "inquirer": "^9.2.17"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

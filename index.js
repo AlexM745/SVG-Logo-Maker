@@ -12,14 +12,14 @@ const questions = [
     //the text for the logo
         {
             type:"input", 
-            name:"logoText", 
+            name:"text", 
             message:"Input three chracters for your logo:",
             maxLength:3 // sets the limit of the user input to 3 characters
         },
     // the color for the three characters the user used
         {
             type:"input", 
-            name:"textColors", 
+            name:"textColor", 
             message:"For the logo text, enter a color or hexadecimal number:"
         },
     // the list of shapes for the user to pick 
@@ -35,7 +35,7 @@ const questions = [
     // the color of the shape for the user to pick
         {
             type:"input", 
-            name:"shapeColors", 
+            name:"shapeColor", 
             message:"For the shape, enter a color or hexadecimal number:"
         },
     ]

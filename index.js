@@ -44,7 +44,7 @@ const questions = [
 // function to initialize the application  
 function init() {
     // pass the questions array to inquirer
-    inquirer.prompt(questions);
+    inquirer.prompt(questions)
 
     .then((answers) => {
         // the logo content is the answers

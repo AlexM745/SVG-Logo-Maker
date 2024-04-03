@@ -77,5 +77,3 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
   To see the test pass use the follwing command:
 
   `npm test`
-
-

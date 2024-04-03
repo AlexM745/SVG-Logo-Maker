@@ -5,7 +5,6 @@ const inquirer = require("inquirer");
 const fs = require('fs');
 // imports the generate logo js file  
 const generateLogo = require('./lib/generateLogo');
-const maxLength = require ('inquirer-maxlength-input-prompt');
 
 // questions prompts that will be presented to the user
 const questions = [
@@ -16,6 +15,7 @@ const questions = [
         type: "input",
         name: "text",
         message: "Input three chracters for your logo:",
+        // checks to see if the input is only 3 characters
         validate: (text)=> {
 
             if (text.length > 3 || text.length <= 0 ){
@@ -54,12 +54,11 @@ const questions = [
 
 // function to initialize the application  
 function init() {
-    inquirer.registerPrompt("maxlength-input", maxLength)
     // pass the questions array to inquirer
     inquirer.prompt(questions)
-
+    // answer promise
     .then((answers) => {
-        // the logo content is the answers
+        // the logo content is the answers that pass through generatelogo
         const logoContent = generateLogo(answers);
         // writes the svg file and sends out to the example folder 
         fs.writeFile('./examples/logo.svg', logoContent, (err) => {

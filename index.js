@@ -20,6 +20,7 @@ const questions = [
 
             if (text.length > 3 || text.length <= 0 ){
                return "Must be 1 to 3 characters!";
+               
             } else {
                 return true;
             }

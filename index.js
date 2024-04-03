@@ -12,11 +12,20 @@ const questions = [
 
     //the text for the logo
     {
-        maxLength: 3, // sets the limit of the user input to 3 characters
+        
         type: "input",
         name: "text",
-        message: "Input three chracters for your logo:"
-       
+        message: "Input three chracters for your logo:",
+        validate: (text)=> {
+
+            if (text.length > 3 || text.length <= 0 ){
+               return "Must be 1 to 3 characters!";
+            } else {
+                return true;
+            }
+        }  
+
+    
     },
     // the color for the three characters the user used
     {

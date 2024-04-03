@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/AlexM745/SVG-Logo-Maker#readme",
   "dependencies": {
-    "inquirer": "^9.2.17",
+    "inquirer": "^8.2.6",
     "inquirer-maxlength-input-prompt": "^1.0.2"
   },
   "devDependencies": {

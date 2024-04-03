@@ -1,20 +1,22 @@
 
 // imports inquirer
-const inquirer = require('inquire');
+const inquirer = require("inquirer");
 //imports filesystem to use writeFile
 const fs = require('fs');
 // imports the generate logo js file  
-const generateLogo = require('./lib/genereateLogo');
+const generateLogo = require('./lib/generateLogo');
+const maxLength = require ('inquirer-maxlength-input-prompt');
 
 // questions prompts that will be presented to the user
 const questions = [
 
     //the text for the logo
     {
+        maxLength: 3, // sets the limit of the user input to 3 characters
         type: "input",
         name: "text",
-        message: "Input three chracters for your logo:",
-        maxLength: 3 // sets the limit of the user input to 3 characters
+        message: "Input three chracters for your logo:"
+       
     },
     // the color for the three characters the user used
     {
@@ -25,7 +27,7 @@ const questions = [
     // the list of shapes for the user to pick 
     {
         type: "list",
-        name: "shapes",
+        name: "shapeChoice",
         choices: [
             "Circle",
             "Triangle",
@@ -43,6 +45,7 @@ const questions = [
 
 // function to initialize the application  
 function init() {
+    inquirer.registerPrompt("maxlength-input", maxLength)
     // pass the questions array to inquirer
     inquirer.prompt(questions)
 
@@ -50,7 +53,7 @@ function init() {
         // the logo content is the answers
         const logoContent = generateLogo(answers);
         // writes the svg file and sends out to the example folder 
-        fs.writeFile('./example/logo.svg', logoContent, (err) => {
+        fs.writeFile('./examples/logo.svg', logoContent, (err) => {
             // ternary conditional statement 
             err ? console.log(err) : console.log("Generated logo.svg")
         })
